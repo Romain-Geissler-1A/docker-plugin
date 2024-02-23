@@ -30,7 +30,8 @@ public class DockerSimpleTemplate extends DockerTemplateBase {
             boolean privileged,
             boolean tty,
             String macAddress,
-            String extraHostsString) {
+            String extraHostsString,
+            String extraDockerLabelsString) {
         super(
                 image,
                 pullCredentialsId,
@@ -54,7 +55,8 @@ public class DockerSimpleTemplate extends DockerTemplateBase {
                 privileged,
                 tty,
                 macAddress,
-                extraHostsString);
+                extraHostsString,
+                extraDockerLabelsString);
     }
 
     @Override

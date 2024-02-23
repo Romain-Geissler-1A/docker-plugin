@@ -58,6 +58,7 @@ public class DockerBuilderControlOptionRun extends DockerBuilderControlCloudOpti
     public final Integer shmSize;
     public final boolean bindAllPorts;
     public final String macAddress;
+    public final String extraDockerLabelsString;
 
     @DataBoundConstructor
     public DockerBuilderControlOptionRun(
@@ -84,7 +85,8 @@ public class DockerBuilderControlOptionRun extends DockerBuilderControlCloudOpti
             boolean bindAllPorts,
             boolean privileged,
             boolean tty,
-            String macAddress) {
+            String macAddress,
+            String extraDockerLabelsString) {
         super(cloudName);
         this.image = image;
         this.pullCredentialsId = pullCredentialsId;
@@ -109,6 +111,7 @@ public class DockerBuilderControlOptionRun extends DockerBuilderControlCloudOpti
         this.shmSize = shmSize;
         this.bindAllPorts = bindAllPorts;
         this.macAddress = macAddress;
+        this.extraDockerLabelsString = extraDockerLabelsString;
     }
 
     public DockerRegistryEndpoint getRegistry() {
@@ -204,7 +207,8 @@ public class DockerBuilderControlOptionRun extends DockerBuilderControlCloudOpti
                 privileged,
                 tty,
                 macAddress,
-                null);
+                null,
+                extraDockerLabelsString);
 
         LOG.info("Starting container for image {}", xImage);
         llog.println("Starting container for image " + xImage);

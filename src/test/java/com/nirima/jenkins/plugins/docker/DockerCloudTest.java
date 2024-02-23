@@ -108,7 +108,8 @@ public class DockerCloudTest {
                 true,
                 true,
                 "macAddress",
-                "extraHostsString");
+                "extraHostsString",
+                "extraDockerLabel1=extraDockerValue1\nextraDockerLabel2=extraDockerLabel2");
         templateBase.setCapabilitiesToAddString("SYS_ADMIN");
         templateBase.setCapabilitiesToDropString("CHOWN");
         templateBase.setSecurityOptsString("seccomp=unconfined");

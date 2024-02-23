@@ -40,6 +40,7 @@ public class DockerTemplateTest {
     boolean tty = false;
     String macAddress = "92:d0:c6:0a:29:33";
     String extraHostsString = "extraHostsString";
+    String extraDockerLabelsString = "extraDockerLabel1=extraDockerValue1\nextraDockerLabel2=extraDockerLabel2";
     String capabilitiesToAddString = "CHOWN";
     String capabilitiesToDropString = "NET_ADMIN";
     String securityOptsString = "seccomp=unconfined";
@@ -68,7 +69,8 @@ public class DockerTemplateTest {
                 privileged,
                 tty,
                 macAddress,
-                extraHostsString);
+                extraHostsString,
+                extraDockerLabelsString);
         dockerTemplateBase.setCapabilitiesToAddString(capabilitiesToAddString);
         dockerTemplateBase.setCapabilitiesToDropString(capabilitiesToDropString);
         dockerTemplateBase.setSecurityOptsString(securityOptsString);
